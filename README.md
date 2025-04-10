@@ -3,7 +3,10 @@ Here's the updated `README.md` with icons removed and `npm install` section incl
 ---
 
 ```markdown
+-
 # Article Hub
+
+# Article-hub page URL : https://vaibhavm01.github.io/article-hub/
 
 A modern Angular 19-based online publishing platform for creating, reading, and managing articles. Built as a PWA with Firebase backend and Google social authentication.
 
