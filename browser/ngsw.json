@@ -1,0 +1,97 @@
+{
+  "configVersion": 1,
+  "timestamp": 1744267668321,
+  "index": "/article-hub/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/article-hub/chunk-6NK4DJGE.js",
+        "/article-hub/chunk-DO2GBO5P.js",
+        "/article-hub/chunk-G4V44UA3.js",
+        "/article-hub/chunk-GQ733HIC.js",
+        "/article-hub/chunk-NTXCGKWX.js",
+        "/article-hub/chunk-OP6YF6N2.js",
+        "/article-hub/chunk-PFKHLFJJ.js",
+        "/article-hub/favicon.ico",
+        "/article-hub/index.html",
+        "/article-hub/main-4WX22NXL.js",
+        "/article-hub/manifest.webmanifest",
+        "/article-hub/polyfills-FFHMD2TL.js",
+        "/article-hub/styles-TC6V4OTY.css",
+        "/article-hub/worker-XOEVH2S4.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/article-hub/assets/images/default-author-profile.png",
+        "/article-hub/icons/icon-128x128.png",
+        "/article-hub/icons/icon-144x144.png",
+        "/article-hub/icons/icon-152x152.png",
+        "/article-hub/icons/icon-192x192.png",
+        "/article-hub/icons/icon-384x384.png",
+        "/article-hub/icons/icon-512x512.png",
+        "/article-hub/icons/icon-72x72.png",
+        "/article-hub/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/article-hub/assets/images/default-author-profile.png": "171d11a7080274eea615b211f624e4e04064aacb",
+    "/article-hub/chunk-6NK4DJGE.js": "b46c7eb504af6d7a074bb4c38bfe5ea0fbc9c3d7",
+    "/article-hub/chunk-DO2GBO5P.js": "0006f4128750cb4f12b8c374cc3f2f52a113ed44",
+    "/article-hub/chunk-G4V44UA3.js": "82d8b2a906728c118f923225970d3b4b2cff5974",
+    "/article-hub/chunk-GQ733HIC.js": "fe273973c5d1d7d08e4609dcd4201236965d5e18",
+    "/article-hub/chunk-NTXCGKWX.js": "a2652b4b3cf094c1cae7137e010779137aeb87d9",
+    "/article-hub/chunk-OP6YF6N2.js": "380e7bae04d76654e6da0c6e7408424f36e4d97f",
+    "/article-hub/chunk-PFKHLFJJ.js": "bfe2e53345ebd477bf2a50b17773bf7b7a31c309",
+    "/article-hub/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/article-hub/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/article-hub/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/article-hub/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/article-hub/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/article-hub/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/article-hub/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/article-hub/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/article-hub/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/article-hub/index.html": "193138548ec85860b37e7cb967596e44c4bec28d",
+    "/article-hub/main-4WX22NXL.js": "89f8498af6c56d3b2e5b87f6ce4537085620807f",
+    "/article-hub/manifest.webmanifest": "b4fd3b40c8051d7ca9053a3c658914685b5aa866",
+    "/article-hub/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/article-hub/styles-TC6V4OTY.css": "db8058691d504e2a01393ffffd3d3e16717864af",
+    "/article-hub/worker-XOEVH2S4.js": "83000a2d9d551b1c9dd10f7ab054a3eb77f446c9"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
