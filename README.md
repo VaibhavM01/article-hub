@@ -34,21 +34,22 @@ A modern Angular 19-based online publishing platform for creating, reading, and 
 
 ---
 
+
 ## Project Structure (Key Folders)
 
-```
+
 src/
 ├── app/
 │   ├── components/      # Reusable components
 │   ├── pages/           # Standalone pages (Home, Author Directory, etc.)
 │   ├── services/        # Firebase interaction (auth, article, comments)
 │   ├── interfaces/      # TypeScript interfaces/models
-|   |-- Shared /         # shared pages (navbar, footer)
-|   |-- workeds/         # web workes ( tag suggestion worker)
+|   ├── Shared /         # shared pages (navbar, footer)
+|   ├── workeds/         # web workes ( tag suggestion worker)
 ├── environments/
 ├── manifest.webmanifest
 └── main.ts
-```
+
 
 ---
 
