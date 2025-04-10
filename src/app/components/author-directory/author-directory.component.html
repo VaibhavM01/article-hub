@@ -1,0 +1,25 @@
+<section class="author-directory">
+  <h2>Authors</h2>
+
+  <input
+    type="text"
+    placeholder="Search authors by name..."
+    class="search-box"
+    (input)="onSearch($event)"
+  />
+
+  <ng-container *ngIf="filteredAuthors().length; else noAuthors">
+    <div class="author-grid">
+      <div *ngFor="let author of filteredAuthors()" class="author-card">
+        <img [src]="author.profileImageUrl || defaultImage" alt="{{ author.name }}" />
+        <h3>{{ author.name }}</h3>
+        <p *ngIf="author.bio">{{ author.bio }}</p>
+        <a [routerLink]="['/author', author.id]">View Profile</a>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noAuthors>
+    <p>No authors found.</p>
+  </ng-template>
+</section>

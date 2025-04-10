@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="logo nav-brand">
+    <a routerLink="/">ArticleHub</a>
+    <h4> Welcome {{userName()}}</h4>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/authors">Authors</a></li>
+
+    <!-- Show "Write" only if logged in -->
+    <li *ngIf="isLoggedIn()"><a routerLink="/create">Write</a></li>
+
+    <!-- Show Login/Logout conditionally -->
+    <li *ngIf="!isLoggedIn()"><a routerLink="/login">Login</a></li>
+    <li *ngIf="isLoggedIn()"><a href="#" (click)="logout()">Logout</a></li>
+  </ul>
+</nav>

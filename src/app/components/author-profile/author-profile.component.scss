@@ -1,0 +1,64 @@
+.author-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    .author-info {
+      h2 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      p {
+        color: #666;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.75rem;
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  color: #777;
+}

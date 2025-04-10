@@ -1,0 +1,20 @@
+<section *ngIf="author" class="author-profile">
+  <div class="profile-header">
+    <img [src]="author.profileImageUrl || defaultImage" alt="Profile Picture" />
+    <div class="author-info">
+      <h2>{{ author.name }}</h2>
+      <p *ngIf="author.bio">{{ author.bio }}</p>
+    </div>
+  </div>
+
+  <h3>Articles by {{ author.name }}</h3>
+  <ul class="article-list">
+    <li *ngFor="let article of articles">
+      <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+    </li>
+  </ul>
+</section>
+
+<div *ngIf="!author" class="not-found">
+  <p>Author not found.</p>
+</div>

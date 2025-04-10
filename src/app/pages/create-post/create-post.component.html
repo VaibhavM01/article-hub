@@ -1,0 +1,29 @@
+<div class="create-post">
+  <h2>Create a New Article</h2>
+
+  <form [formGroup]="postForm" (ngSubmit)="savePost()">
+    <label for="title">Title</label>
+    <input id="title" type="text" formControlName="title" required />
+
+    <label for="tags">Tags (comma-separated)</label>
+    <input id="tags" type="text" formControlName="tags" />
+    <button type="button" (click)="suggestTags()" class="btn-secondary">Suggest Tags</button>
+   
+    <label for="thumbnailUrl">Image Url</label>
+    <input id="thumbnailUrl" type="text" formControlName="thumbnailUrl" />
+
+    <label for="content">Content</label>
+    <ngx-editor-menu id="editor-menu" [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+    <ngx-editor id="content" formControlName="content" [editor]="editor"></ngx-editor>
+
+    <label for="isDraft-check" class="checkbox-label">
+      <input id="isDraft-check" type="checkbox" formControlName="isDraft" />
+      Save as Draft
+    </label>
+
+    <label for="schedule">Schedule for Later</label>
+    <input id="schedule" type="datetime-local" formControlName="scheduledDate" />
+
+    <button type="submit" class="btn-primary" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</div>

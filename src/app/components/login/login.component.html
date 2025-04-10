@@ -1,0 +1,30 @@
+<div class="login-container">
+  <h2>{{ isRegisterMode ? 'Register' : 'Login' }}</h2>
+
+  
+
+  <div class="auth-form" *ngIf="!user">
+    <input type="email" placeholder="Email" [(ngModel)]="email" required="true"  autocomplete="email"/>
+    <input type="password" placeholder="Password" [(ngModel)]="password" required="true"/>
+
+    <input
+      *ngIf="isRegisterMode"
+      type="text"
+      placeholder="Display Name"
+      [(ngModel)]="displayName"
+    />
+    <span *ngIf="loginerror" class="error-message">{{ errorMessage }}</span>
+    <button (click)="isRegisterMode ? registerWithEmail() : loginWithEmail()">
+      {{ isRegisterMode ? 'Register' : 'Login' }}
+    </button>
+    <button *ngIf="!user" (click)="login()">Sign in with Google</button>
+    <a (click)="toggleMode()">
+      {{ isRegisterMode ? 'Already have an account? Login' : 'Create an account' }}
+    </a>
+  </div>
+
+  <div *ngIf="user" class="user-info">
+    <p>Welcome, {{ user.displayName || user.email }}</p>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>

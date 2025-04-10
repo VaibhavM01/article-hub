@@ -1,0 +1,61 @@
+
+<div class="home-wrapper">
+  <div class="search-sort-bar">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search articles..."
+      (input)="updateSearch($any($event.target).value)"
+    />
+    <select class="sort-dropdown" (change)="changeSort($any($event.target).value)">
+      <option value="latest">Latest</option>
+      <option value="popular">Most Popular</option>
+    </select>
+  </div>
+
+  <h2 class="section-heading">Featured Articles</h2>
+  <div class="articles-grid">
+    <ng-container *ngFor="let article of featuredArticles()">
+      <div class="article-card">
+        <img [src]="article.thumbnailUrl" alt="Thumbnail" class="thumbnail" />
+        <div class="card-content">
+          <h3 class="title">
+            <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+          </h3>
+          <p class="description">{{ article.description | slice:0:100 }} ....</p>
+          <div class="meta">
+            <span class="author">By {{ article.authorName }}</span>
+            <span class="date">{{ article.publishDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="tags" *ngIf="article.tags?.length">
+            <span class="tag" *ngFor="let tag of article.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <h2 class="section-heading">All Articles</h2>
+  <div class="articles-grid">
+    <ng-container *ngFor="let article of articles()">
+      <div class="article-card">
+        <img [src]="article.thumbnailUrl" alt="Thumbnail" class="thumbnail" />
+        <div class="card-content">
+          <h3 class="title">
+            <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+          </h3>
+          <p class="description">{{ article.description | slice:0:100}} ....</p>
+          <div class="meta">
+            <span class="author">
+              By <a [routerLink]="['/author', article.authorId]">{{ article.authorName }}</a>
+            </span>
+            <span class="date">{{ article.publishDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="tags" *ngIf="article.tags?.length">
+            <span class="tag" *ngFor="let tag of article.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

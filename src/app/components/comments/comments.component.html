@@ -1,0 +1,42 @@
+<div class="comment-section">
+  <h3>Comments</h3>
+
+  <div class="sort-buttons">
+    <button (click)="setSort('newest')">Newest</button>
+    <button (click)="setSort('oldest')">Oldest</button>
+    <button (click)="setSort('mostLiked')">Most Liked</button>
+  </div>
+
+  <div *ngFor="let comment of topLevelComments()">
+    <div class="comment">
+      <strong>{{ comment.userName }}</strong>
+      <p>{{ comment.text }}</p>
+      <small>{{ comment.createdAt?.toDate() | date: 'short' }}</small>
+      <button (click)="replyTo.set(comment.id)">Reply</button>
+    </div>
+
+    <div class="replies" *ngFor="let reply of repliesFor(comment.id)">
+      <div class="comment reply">
+        <strong>{{ reply.userName }}</strong>
+        <p>{{ reply.text }}</p>
+        <small>{{ reply.createdAt?.toDate() | date: 'short' }}</small>
+      </div>
+    </div>
+
+    <div *ngIf="replyTo() === comment.id">
+      <textarea
+        [ngModel]="replyInputs()[comment.id] || ''"
+        (ngModelChange)="setReplyInput(comment.id, $event)"
+      ></textarea>
+      <button (click)="postComment(comment.id)">Post Reply</button>
+    </div>
+  </div>
+
+  <div class="new-comment">
+    <h4>Leave a Comment</h4>
+    <textarea [(ngModel)]="commentInput" maxlength="250"></textarea>
+    <div class="comment-char-count">{{ commentInput().length }}/250</div>
+    <div *ngIf="errorMessage()" class="error-message">{{ errorMessage() }}</div>
+    <button (click)="postComment()">Post</button>
+  </div>
+</div>

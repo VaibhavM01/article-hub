@@ -1,59 +1,134 @@
-# ArticleHub
+Here's the updated `README.md` with icons removed and `npm install` section included clearly:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+---
 
-## Development server
+```markdown
+# Article Hub
 
-To start a local development server, run:
+A modern Angular 19-based online publishing platform for creating, reading, and managing articles. Built as a PWA with Firebase backend and Google social authentication.
 
-```bash
-ng serve
+---
+
+## Features
+
+- Create and publish rich text articles
+- Author directory and profile pages
+- Comment threads with nested replies
+- Firebase Google login (Facebook login planned)
+- PWA support (offline-first + installable)
+- Search and filter articles
+- Schedule articles and mark drafts
+- Standalone Angular components (Angular 17+ approach)
+
+---
+
+## Tech Stack
+
+| Tech       | Description                              |
+|------------|------------------------------------------|
+| Angular 19 | Frontend framework using standalone APIs |
+| Firebase   | Auth + Firestore for backend             |
+| SCSS       | Modular styling                          |
+| NgxEditor  | Rich text editor for article creation    |
+| PWA        | Offline support, web manifest, icon      |
+
+---
+
+## Project Structure (Key Folders)
+
+```
+src/
+├── app/
+│   ├── components/      # Reusable components
+│   ├── pages/           # Standalone pages (Home, Author Directory, etc.)
+│   ├── services/        # Firebase interaction (auth, article, comments)
+│   ├── interfaces/      # TypeScript interfaces/models
+├── environments/
+├── manifest.webmanifest
+└── main.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Clone and Install Dependencies
 
 ```bash
-ng generate --help
+git clone https://github.com/your-username/article-hub.git
+cd article-hub
+npm install
 ```
 
-## Building
+### 2. Firebase Setup
 
-To build the project run:
+- Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
+- Enable Firestore and Google Authentication
+- Add your Firebase config to `environment.ts` like:
 
-```bash
-ng build
+```ts
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_BUCKET",
+    messagingSenderId: "SENDER_ID",
+    appId: "YOUR_APP_ID"
+  }
+};
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Testing
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Basic unit testing is implemented using Angular’s default setup. You can run tests with:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Run Locally
 
 ```bash
-ng e2e
+ng serve
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Then open [http://localhost:4200](http://localhost:4200) in your browser.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## PWA Support
+
+The app is installable and works offline.
+
+- Manifest: `manifest.webmanifest`
+- Service Worker: Registered in `main.ts`
+
+---
+
+## Authentication
+
+- Google login (via Firebase)
+- Facebook login coming soon
+
+---
+
+## Future Features
+
+- Tag-based filtering system
+- Article bookmarking
+- Admin dashboard
+- User-following system
+
+---
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+---

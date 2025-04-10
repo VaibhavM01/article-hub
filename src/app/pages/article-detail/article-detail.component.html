@@ -1,0 +1,38 @@
+<section *ngIf="article" class="article-detail-container" [class.blurred]="showComments">
+  <h1>{{ article.title }}</h1>
+  <p class="meta">
+    By <a [routerLink]="['/author', article.authorId]">{{ article.authorName }}</a> | {{ article.publishDate | date: 'longDate' }}
+  </p>
+
+  <img id="artile-thumbnail" [src]="article.thumbnailUrl" alt="Article Thumbnail" class="thumbnail" />
+  <article class="content" [innerHTML]="article.content"></article>
+
+  <hr />
+
+  <section *ngIf="related.length" class="related-section">
+    <h3>Related Articles</h3>
+    <ul class="related-list">
+      <li *ngFor="let rel of related" class="related-article">
+        <h4 class="related-title">
+          <a (click)="navigateToArticle(rel.id)">{{ rel.title }}</a>
+        </h4>
+        <p class="article-detail-content-container">{{ rel.description }}</p>
+      </li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <!-- View Comments Button -->
+  <div class="view-comments">
+    <button (click)="showComments = true">View Comments ({{ commentCount || 0 }})</button>
+  </div>
+</section>
+
+<!-- Comment Sidebar Overlay -->
+<div class="comment-overlay" *ngIf="showComments">
+  <div class="comment-drawer">
+    <button class="close-btn" (click)="showComments = false">&times;</button>
+    <app-comments [articleId]="article?.id!"></app-comments>
+  </div>
+</div>

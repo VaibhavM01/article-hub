@@ -1,0 +1,73 @@
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  text-align: center;
+  .error-message {
+    color: red;
+    margin-top: 1rem;
+    display: block; // ensures it takes full width
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .user-info{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  input {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  
+    &:focus {
+      outline: none;
+      border-color: #007bff; // Bootstrap blue, can be customized
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+  
+    &::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+  }
+  
+
+  button {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+
+  a {
+    display: block;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #007bff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
