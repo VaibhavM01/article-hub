@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()), 
     provideAuth(() => getAuth()), provideServiceWorker('ngsw-worker.js', {
-           enabled: false,//!isDevMode(),
+           enabled: !isDevMode(),
            
             registrationStrategy: 'registerWhenStable:30000',
           }),
